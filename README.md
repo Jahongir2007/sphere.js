@@ -49,11 +49,42 @@ app.options({
         send: "Hello, world!" // getting Hello, world!
 });
 ```
-The `listen:` object for indicates on which server the data will be output. This object must be in the `options()` method:
+The `listen:` object for indicates on which server the data will be output. This object must be in the all methods:
 ```js
 const sphere = require("./sphere");
 const app = sphere;
 app.options({
     listen: 8000
+});
+```
+### `html()` method in Sphere.js
+The `html()` method uploads HTML files to the http server. Usage:
+```js
+const sphere = require("./sphere");
+const app = sphere;
+app.html({
+    file: "/test.html",
+    listen: 8000
+});
+```
+`file:` object indicates which file to retrieve.
+```js
+const sphere = require("./sphere");
+const app = sphere;
+app.html({
+    file: "/test.html", // test.html
+    listen: 8000
+});
+```
+### `post()` method in Sphere.js
+`post()` method createing for creating [POST](https://en.wikipedia.org/wiki/POST_(HTTP)):
+```js
+const sphere = require("./sphere");
+const app = sphere;
+app.post({
+    send: "Sphere.js mini web framework", // getting string
+    host: "datajs.com", // host server
+    port: 443, // port server,
+    path: "/todos" // path server
 });
 ```
