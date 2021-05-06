@@ -1,3 +1,9 @@
+/*
+Author: Jahongir Sobirov
+Sphere.js mini web framework
+Version: 1.0.0
+License: MIT
+*/
 const http = require("http");
 const https = require('https');
 const fs = require("fs");
