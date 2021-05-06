@@ -40,12 +40,20 @@ app.options({
     head: 200
 });
 ```
-The `head:` (Added in v1..0) property is an inbuilt property of the ‘http’ module which sends a response header to the request. The status code is a 3-digit HTTP status code, like 404. The last argument, headers, are the response headers. Optionally one can give a human-readable statusMessage as the second argument.
+The `head:` object is an inbuilt object of the ‘http’ module which sends a response header to the request. The status code is a 3-digit HTTP status code, like 404. The last argument, headers, are the response headers. Optionally one can give a human-readable statusMessage as the second argument.
 `send:` object for getting datas in the http server:
 ```js
 const sphere = require("./sphere");
 const app = sphere;
 app.options({
         send: "Hello, world!" // getting Hello, world!
+});
+```
+The `listen:` object for indicates on which server the data will be output. This object must be in the `options()` method:
+```js
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    listen: 8000
 });
 ```
