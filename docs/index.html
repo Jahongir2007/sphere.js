@@ -108,6 +108,48 @@ const app = sphere;
 app.options({
         send: "Hello, world!" // getting Hello, world!
 });</pre>
+The <code>listen:</code> object for indicates on which server the data will be output. This object must be in the all methods:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    listen: 8000
+});
+</pre>    
+</p>
+    <h2><code>html()</code> method in Sphere.js</h2>
+    <p>
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.html({
+    file: "/test.html",
+    listen: 8000
+    });
+</pre>
+<code>file:</code> object indicates which file to retrieve.
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.html({
+    file: "/test.html", // test.html
+    listen: 8000
+});
+</pre>
+    </p>
+    <h2><code>post()</code> method in Sphere.js</h2>
+    <p>
+        <code>post()</code> method creating for <a href="https://en.wikipedia.org/wiki/POST_(HTTP)">POST</a>:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.post({
+    send: "Sphere.js mini web framework", // getting string
+    host: "datajs.com", // host server
+    port: 443, // port server,
+    path: "/todos" // path server
+});
+</pre>
     </p>
     </div>
 </body>
