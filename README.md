@@ -78,7 +78,7 @@ app.html({
 });
 ```
 ### `post()` method in Sphere.js
-`post()` method createing for creating [POST](https://en.wikipedia.org/wiki/POST_(HTTP)):
+`post()` method creating for [POST](https://en.wikipedia.org/wiki/POST_(HTTP)):
 ```js
 const sphere = require("./sphere");
 const app = sphere;
