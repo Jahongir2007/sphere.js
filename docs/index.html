@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Sphere.js mini web framework</h1>
+        <p>Sphere.js mini web framework for Node.js.</p>
+        <code>gh repo clone Jahongir2007/sphere.js</code>
+      </div>
+      <div class="container">
+      <div class="row">
+      <div class="col-sm-6">
+          <div class="container">
+              <h1>Why Sphere.js</h1>
+              <p>Sphere.js is used to create simple <br> http servers.
+                This framework is a good choice<br> for beginners.
+                Learning Sphere.js is very quick and very easy.</p>
+          </div>
+      </div>
+      <div class="col-sm-6">
+            <pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    head: 200,
+    send: "Creating HTTP server",
+    listen: 8000
+});</pre>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Easy framework</h3>
+            If you want to reach your goal with short codes. So this framework is for you.
+        </div>
+        <div class="col-sm-4">
+            <h3>Fast API for HTTP servers</h3>
+            Fast and easy 3 API. Framework size is 1.32 KB.Do you like working with http servers? Then Sphere.js is a good framework for you.
+        </div>
+        <div class="col-sm-4">
+            <h3>Easy to learn</h3>
+            Sphere.js is very easy to learn. All you have to do is know what an http server is. Create a server using 3 lines of code.
+        </div>
+    </div>
+</div>
+    <center>
+        <h1>Documentations</h1>
+    </center>
+    <div class="container">
+    <div class="alert alert-warning">
+        <b>All API documentations Sphere.js (for version 1.0.0).</b>
+      </div>
+      <h2>Getting started</h2>
+      <p><code>gh repo clone Jahongir2007/sphere.js</code> Download the framework using the GitHub CLI. Creating <code>helloworld.js</code> program:
+        After downloading the framework, enter these codes:<br>
+<pre>
+const sphere = require("./bin/sphere");
+const app = sphere;
+app.options({
+    head: 200,
+    send: "Hello, world!",
+    listen: 8000
+});</pre>
+Now we use it:
+<pre>
+node helloworld.js</pre>
+</p>
+    <h2>Importing Sphere.js and creating sphere.js application</h2>
+    <p>To import Sphere.js, you will need the <code>require()</code> method.
+<pre>
+const require = require("./sphere"); // importing Sphere.js
+</pre>
+We save the Sphere.js methods to the desired variable (and our first program is ready):
+<pre>
+const app = sphere;  
+</pre>
+</p>
+    <h2><code>options()</code> method in Sphere.js</h2>
+    <p>Now let's use the <code>options()</code> method:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options(); // calling method options()
+</pre>
+This method for creating http servers.
+Objects in the <code>options()</code> method
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    head: 200
+});</pre>
+The <code>head:</code> (Added in v1..0) property is an inbuilt property of the ‘http’ module which sends a response header to the request. The status code is a 3-digit HTTP status code, like 404. The last argument, headers, are the response headers. Optionally one can give a human-readable statusMessage as the second argument.<br>
+<code>send:</code> object for getting datas in the http server:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+        send: "Hello, world!" // getting Hello, world!
+});</pre>
+    </p>
+    </div>
+</body>
+</html>
