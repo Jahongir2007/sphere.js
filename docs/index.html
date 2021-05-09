@@ -151,7 +151,6 @@ app.post({
 });
 </pre>
     </p>
-    </div>
 <h2><code>queryURL()</code> method in sphere.js</h2>
 <p>
     <code>queryURL()</code> the request from the client, as an object.
@@ -170,11 +169,12 @@ There are built-in modules to easily split the query string into readable parts,
 <pre>
 const sphere = require("./sphere");
 const app = sphere;
-app.queryURL({
+app.splitURL({
     head: 500,
     listen: 8000 
 });
 </pre>
 </p>
+    </div>
 </body>
 </html>
