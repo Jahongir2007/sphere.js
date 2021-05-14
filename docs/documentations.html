@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Sphere.js mini web framework</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Sphere.js</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Bosh sahifa</a></li>
+      <li class="active"><a href="#">Documentations</a></li>
+      <li><a href="#">Be sponsor</a></li>
+      <li><a href="#">Wiki</a></li>
+    </ul>
+  </div>
+</nav>
+      <h2>Getting started</h2>
+      <p>Download .zip file in this site:
+        After downloading the framework, enter these codes:<br>
+<pre>
+const sphere = require("./spherejs/sphere");
+const app = sphere;
+app.options({
+    head: 200,
+    send: "Hello, world!",
+    listen: 8000
+});</pre>
+Now we use it:
+<pre>
+node helloworld.js</pre>
+</p>
+<ul class="pager">
+  <li class="previous"><a href="#">Previous</a></li>
+  <li class="next"><a href="#">Next</a></li>
+</ul>
+    </div>
+</body>
+</html>
