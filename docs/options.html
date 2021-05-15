@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Sphere.js mini web framework</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Sphere.js</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="https://jahongir2007.github.io/sphere.js/">Home</a></li>
+      <li class="active"><a href="https://jahongir2007.github.io/sphere.js/documentations.html">Documentations</a></li>
+      <li><a href="#">Be sponsor</a></li>
+      <li><a href="./spherejs.zip" download rel="noopener noreferrer">Download</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="container">
+    <h2><code>options()</code> method in Sphere.js</h2>
+    <p>Now let's use the <code>options()</code> method:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options(); // calling method options()
+</pre>
+This method for creating http servers.
+Objects in the <code>options()</code> method
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    head: 200
+});</pre>
+The <code>head:</code> (Added in v1..0) property is an inbuilt property of the ‘http’ module which sends a response header to the request. The status code is a 3-digit HTTP status code, like 404. The last argument, headers, are the response headers. Optionally one can give a human-readable statusMessage as the second argument.<br>
+<code>send:</code> object for getting datas in the http server:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+        send: "Hello, world!" // getting Hello, world!
+});</pre>
+The <code>listen:</code> object for indicates on which server the data will be output. This object must be in the all methods:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    listen: 8000
+});
+</pre>    
+</p>
+    </div>
+</body>
+</html>
