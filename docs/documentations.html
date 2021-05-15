@@ -16,16 +16,23 @@
       <a class="navbar-brand" href="#">Sphere.js</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="https://jahongir2007.github.io/sphere.js/">Home</a></li>
+      <li><a href="https://jahongir2007.github.io/sphere.js">Home</a></li>
       <li class="active"><a href="https://jahongir2007.github.io/sphere.js/documentations.html">Documentations</a></li>
       <li><a href="#">Be sponsor</a></li>
       <li><a href="./spherejs.zip" download rel="noopener noreferrer">Download</a></li>
     </ul>
   </div>
 </nav>
+    <center>
+        <h1>Documentations</h1>
+    </center>
     <div class="container">
+    <div class="alert alert-warning">
+        <b>All API documentations Sphere.js (for version 1.4.3).</b>
+      </div>
       <h2>Getting started</h2>
-      <p>Download .zip file in this site and copy downloaded folder in your app's folder and try it:<br>
+      <p>Download .zip file in this site:
+        After downloading the framework, enter these codes:<br>
 <pre>
 const sphere = require("./spherejs/sphere");
 const app = sphere;
@@ -37,13 +44,135 @@ app.options({
 Now we use it:
 <pre>
 node helloworld.js</pre>
-<a href="https://replit.com/@Jahongir2007/spherejs#bin/test.js">View result</a>
 </p>
-<ul class="pager">
-  <li class="previous"><a href="#">Previous</a></li>
-  <li class="next"><a href="https://jahongir2007.github.io/sphere.js/imapp.html">Next</a></li>
-</ul>
-    </div>
+    <h2>Importing Sphere.js and creating sphere.js application</h2>
+    <p>To import Sphere.js, you will need the <code>require()</code> method.
+<pre>
+const require = require("./sphere"); // importing Sphere.js
+</pre>
+We save the Sphere.js methods to the desired variable (and our first program is ready):
+<pre>
+const app = sphere;  
+</pre>
+</p>
+    <h2><code>options()</code> method in Sphere.js</h2>
+    <p>Now let's use the <code>options()</code> method:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options(); // calling method options()
+</pre>
+This method for creating http servers.
+Objects in the <code>options()</code> method
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    head: 200
+});</pre>
+The <code>head:</code> (Added in v1..0) property is an inbuilt property of the ‘http’ module which sends a response header to the request. The status code is a 3-digit HTTP status code, like 404. The last argument, headers, are the response headers. Optionally one can give a human-readable statusMessage as the second argument.<br>
+<code>send:</code> object for getting datas in the http server:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+        send: "Hello, world!" // getting Hello, world!
+});</pre>
+The <code>listen:</code> object for indicates on which server the data will be output. This object must be in the all methods:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.options({
+    listen: 8000
+});
+</pre>    
+</p>
+    <h2><code>html()</code> method in Sphere.js</h2>
+    <p>
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.html({
+    file: "/test.html",
+    listen: 8000
+    });
+</pre>
+<code>file:</code> object indicates which file to retrieve.
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.html({
+    file: "/test.html", // test.html
+    listen: 8000
+});
+</pre>
+    </p>
+    <h2><code>post()</code> method in Sphere.js</h2>
+    <p>
+        <code>post()</code> method creating for <a href="https://en.wikipedia.org/wiki/POST_(HTTP)">POST</a>:
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.post({
+    send: "Sphere.js mini web framework", // getting string
+    host: "datajs.com", // host server
+    port: 443, // port server,
+    path: "/todos" // path server
+});
+</pre>
+    </p>
+<h2><code>queryURL()</code> method in sphere.js</h2>
+<p>
+    <code>queryURL()</code> the request from the client, as an object.
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.queryURL({
+    head: 500,
+    listen: 8000 
+});
+</pre>
+</p>
+<h2><code>splitURL()</code> method in sphere.js</h2>
+<p>
+There are built-in modules to easily split the query string into readable parts, such as the URL module.
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.splitURL({
+    head: 500,
+    listen: 8000 
+});
+</pre>
+</p>
+<h2><code>URL()</code> method in sphere.js</h2>
+<p>
+    The <code>URL</code> method splits up a web address into readable parts.
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.URL("host",{
+    link: "http://localhost:8080/default.htm?year=2017&month=february"
+    // retruns 'localhost:8080'
+});
+</pre>
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.URL("pathname",{
+    link: "http://localhost:8080/default.htm?year=2017&month=february"
+    //returns '/default.htm'
+});
+</pre>
+<pre>
+const sphere = require("./sphere");
+const app = sphere;
+app.URL("search",{
+    link: "http://localhost:8080/default.htm?year=2017&month=february"
+    //returns '?year=2017&month=february'
+});
+</pre>
+</p>
     </div>
 </body>
 </html>
