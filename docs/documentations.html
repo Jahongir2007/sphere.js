@@ -28,7 +28,7 @@
     </center>
     <div class="container">
     <div class="alert alert-warning">
-        <b>All API documentations Sphere.js (for version 1.4.3).</b>
+        <b>All API documentations Sphere.js (for version 1.5.0).</b>
       </div>
       <h2>Getting started</h2>
       <p>Download .zip file in this site:
@@ -44,6 +44,7 @@ app.options({
 Now we use it:
 <pre>
 node helloworld.js</pre>
+        <a href="https://replit.com/@Jahongir2007/spherejs#bin/test.js">View results</a>
 </p>
     <h2>Importing Sphere.js and creating sphere.js application</h2>
     <p>To import Sphere.js, you will need the <code>require()</code> method.
@@ -54,6 +55,7 @@ We save the Sphere.js methods to the desired variable (and our first program is 
 <pre>
 const app = sphere;  
 </pre>
+    <a href="https://replit.com/@Jahongir2007/spherejs#bin/import.js">View results</a>
 </p>
     <h2><code>options()</code> method in Sphere.js</h2>
     <p>Now let's use the <code>options()</code> method:
@@ -70,7 +72,7 @@ const app = sphere;
 app.options({
     head: 200
 });</pre>
-The <code>head:</code> (Added in v1..0) property is an inbuilt property of the ‘http’ module which sends a response header to the request. The status code is a 3-digit HTTP status code, like 404. The last argument, headers, are the response headers. Optionally one can give a human-readable statusMessage as the second argument.<br>
+The <code>head:</code> method is an inbuilt property of the ‘http’ module which sends a response header to the request. The status code is a 3-digit HTTP status code, like 404. The last argument, headers, are the response headers. Optionally one can give a human-readable statusMessage as the second argument.<br>
 <code>send:</code> object for getting datas in the http server:
 <pre>
 const sphere = require("./sphere");
@@ -85,7 +87,8 @@ const app = sphere;
 app.options({
     listen: 8000
 });
-</pre>    
+</pre>
+    <a href="https://replit.com/@Jahongir2007/spherejs#bin/options.js">View results</a>
 </p>
     <h2><code>html()</code> method in Sphere.js</h2>
     <p>
@@ -106,6 +109,7 @@ app.html({
     listen: 8000
 });
 </pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/html.js">View results</a>
     </p>
     <h2><code>post()</code> method in Sphere.js</h2>
     <p>
@@ -120,6 +124,7 @@ app.post({
     path: "/todos" // path server
 });
 </pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/post.js">View results</a>
     </p>
 <h2><code>queryURL()</code> method in sphere.js</h2>
 <p>
@@ -132,6 +137,7 @@ app.queryURL({
     listen: 8000 
 });
 </pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/post.js">View results</a>
 </p>
 <h2><code>splitURL()</code> method in sphere.js</h2>
 <p>
@@ -144,6 +150,7 @@ app.splitURL({
     listen: 8000 
 });
 </pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/splitURL.js">View results</a>
 </p>
 <h2><code>URL()</code> method in sphere.js</h2>
 <p>
@@ -156,6 +163,7 @@ app.URL("host",{
     // retruns 'localhost:8080'
 });
 </pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/url.js">View results</a>
 <pre>
 const sphere = require("./sphere");
 const app = sphere;
@@ -164,6 +172,7 @@ app.URL("pathname",{
     //returns '/default.htm'
 });
 </pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/urlfir.js">View results</a>
 <pre>
 const sphere = require("./sphere");
 const app = sphere;
@@ -172,6 +181,16 @@ app.URL("search",{
     //returns '?year=2017&month=february'
 });
 </pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/urlsec.js">View results</a>
+</p>
+<h2><code>client()</code> method in Sphere.js</h2>
+<p>Why <code>client</code>? It’s common for a modern web application to communicate with other servers to accomplish a task. For example, a web app that allows you to purchase a book online may involve communication between a customer orders server, a book inventory server, and a payment server.
+<pre>
+const sphere = require("./sphere");
+var app = sphere;
+app.client('https://jsonplaceholder.typicode.com/users?_limit=2');
+</pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/client.js">View result</a>
 </p>
     </div>
 </body>
