@@ -18,7 +18,7 @@
     <ul class="nav navbar-nav">
       <li><a href="https://jahongir2007.github.io/sphere.js">Home</a></li>
       <li class="active"><a href="https://jahongir2007.github.io/sphere.js/documentations.html">Documentations</a></li>
-      <li><a href="./spherejs.zip" download rel="noopener noreferrer">Download</a></li>
+      <li><button class="btn-primary"><a href="./spherejs.zip" download rel="noopener noreferrer">Download</a></li></button>
     </ul>
   </div>
 </nav>
@@ -27,7 +27,7 @@
     </center>
     <div class="container">
     <div class="alert alert-warning">
-        <b>All API documentations Sphere.js (for version 1.5.0).</b>
+        <b>All API documentations Sphere.js (for version 1.5.1).</b>
       </div>
       <h2>Getting started</h2>
       <p>Download .zip file in this site:
@@ -191,6 +191,20 @@ app.client('https://jsonplaceholder.typicode.com/users?_limit=2');
 </pre>
 <a href="https://replit.com/@Jahongir2007/spherejs#bin/client.js">View result</a>
 </p>
-    </div>
+<h2>Checking http server</h2>
+<p>
+<pre>
+const sphere = require("./sphere");
+var app = sphere;
+app.checkRun({
+    host: false,
+    port: 5500,
+    head: 200,
+    send: "Hello, world",
+});
+</pre>
+<a href="https://replit.com/@Jahongir2007/spherejs#bin/checkRun.js">View result</a>
+</p>
+</div>
 </body>
 </html>
