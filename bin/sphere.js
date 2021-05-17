@@ -1,7 +1,7 @@
 /*
 Author: Jahongir Sobirov
 Sphere.js mini web framework
-Version: 1.4.3
+Version: 1.5.1
 License: MIT
 */
 const http = require("http");
@@ -84,7 +84,52 @@ function URL(self, adr){
   }
   else if(self == "search"){
     console.log(q.search);
+  } 
+}
+function client(link){
+  let request = https.get(link, (res) => {
+  if (res.statusCode !== 200) {
+    console.error(`Did not get an OK from the server. Code: ${res.statusCode}`);
+    res.resume();
+    return;
   }
+
+  let data = '';
+
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  res.on('close', () => {
+    console.log('Retrieved all data');
+    console.log(JSON.parse(data));
+  });
+});
+request.on('error', (err) => {
+  console.error(`Encountered an error trying to make a request: ${err.message}`);
+});
+}
+function checkRun(self){
+  if(self["host"] == false){
+    http.createServer(function(req, res){
+      res.writeHead(self["head"]);
+      res.write(self["send"]);
+      res.end();
+    }).listen(self["port"], () => {
+      console.log(`Server is running at ${self["port"]}`);
+    });
+  }else{
+    if(self["host"] == false){
+      console.log(`Server is running at ${self["port"]}`);
+      http.createServer(function(req, res){
+        res.writeHead(self["head"]);
+        res.write(self["send"]);
+        res.end();
+      }).listen(self["host"], self["port"], () => {
+        console.log(`Server is running at ${self["host"]}:${self["port"]}`);
+      });
+  }
+}
 }
 module.exports = {
     options,
@@ -92,5 +137,7 @@ module.exports = {
     post,
     queryURL,
     splitURL,
-    URL
+    URL,
+    client,
+    checkRun
 }
